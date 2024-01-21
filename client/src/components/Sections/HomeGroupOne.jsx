@@ -33,7 +33,7 @@ export const HomeGroupOne = () => {
 
                             return (
                                 <div key={id} className='flex flex-col justify-center items-center md:gap-4'>
-                                    <img src={image} alt="" />
+                                    <img src={image} alt="" loading=" lazy" />
                                     <p className='text-white text-xl text-center font-semibold'>{paragraph}</p>
                                 </div>)
                         })}
@@ -44,7 +44,7 @@ export const HomeGroupOne = () => {
             <section className='bg-oldCouple bg-no-repeat bg-center bg-cover h-full py-28'>
                 <div className='container mx-auto h-full'>
                     <div className="grid h-full md:grid-cols-2">
-                        <div className="flex flex-col justify-center gap-6"><img src={Arrow} alt='Arrow' className='w-6 h-6' />
+                        <div className="flex flex-col justify-center gap-6"><img src={Arrow} alt='Arrow' className='w-6 h-6' loading=" lazy"/>
                             <h2 className='text-darkBlue text-4xl font-extrabold'>Say goodbye to erectile dysfunction & performance anxiety.</h2>
                             <p className='text-darkBlue text-xl font-medium'>Our effective treatments are helping 1000s of men just like you.</p>
                             <Button type={'button'} text={'Shop now'} backgroundColor={'bg-orange'} hoverColor={'hover:text-darkBlue'} width={'w-1/2'} />

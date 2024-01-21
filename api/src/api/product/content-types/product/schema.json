@@ -32,14 +32,6 @@
     },
     "imgmain": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "imgsecondary": {
-      "type": "media",
       "multiple": true,
       "required": false,
       "allowedTypes": [
@@ -60,6 +52,17 @@
         "Gel",
         "Tablets"
       ]
+    },
+    "listDescription": {
+      "type": "customField",
+      "options": [
+        "All Natural Ingredients",
+        "Laboratory Tested",
+        "Vegan Friendly",
+        "Gluten Free",
+        "Bigger Results"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }

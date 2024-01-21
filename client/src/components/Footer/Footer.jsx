@@ -20,15 +20,15 @@ export const Footer = () => {
             <div className='container mx-auto py-10'>
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-row justify-between items-center">
-                        <img src={logoFooter} alt="Thunder of zeus" />
+                        <img src={logoFooter} alt="Thunder of zeus" loading=" lazy" />
                         <ul className="flex flex-row flex-wrap gap-10">
-                            <li><img src={paypal} alt="Paypal" /></li>
-                            <li><img src={mastercard} alt="Mastercard" /></li>
-                            <li><img src={visa} alt="Visa" /></li>
-                            <li><img src={stripe} alt="Stripe" /></li>
-                            <li><img src={americanexpress} alt="American Express" /></li>
-                            <li><img src={discover} alt="Discover" /></li>
-                            <li><img src={secure} alt="100% secure" /></li>
+                            <li><img src={paypal} alt="Paypal" loading=" lazy" /></li>
+                            <li><img src={mastercard} alt="Mastercard" loading=" lazy" /></li>
+                            <li><img src={visa} alt="Visa" loading=" lazy" /></li>
+                            <li><img src={stripe} alt="Stripe" loading=" lazy" /></li>
+                            <li><img src={americanexpress} alt="American Express" loading=" lazy" /></li>
+                            <li><img src={discover} alt="Discover" loading=" lazy" /></li>
+                            <li><img src={secure} alt="100% secure" loading=" lazy" /></li>
                         </ul>
                     </div>
                     <hr className='text-white h-1' />

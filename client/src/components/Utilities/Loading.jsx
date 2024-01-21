@@ -15,7 +15,7 @@ export const Loading = () => {
 
             transform: 'translate(-50%, -50%)'
         }}>
-            <img src={LoadingImage} alt="" className='mb-10' />
+            <img src={LoadingImage} alt="" className='mb-10' loading=" lazy" />
             <LinearProgress sx={{ backgroundColor: '#fff', }} />
         </Box >
     );

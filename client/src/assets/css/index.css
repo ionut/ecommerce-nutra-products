@@ -5,11 +5,66 @@
 body {
     font-family: "Montserrat", sans-serif;
 }
-
+/* slider linear for sorting */
 .MuiLinearProgress-bar {
     background-color: #00c5ff !important;
 }
 
 .MuiSlider-colorPrimary {
     color: #ff7200 !important;
+}
+/* tabs */
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.react-tabs__tab {
+    border: 1px solid #000;
+    position: relative;
+    list-style: none;
+    padding: 15px 35px;
+    cursor: pointer;
+    background-color: fff;
+    color: #000;
+    font-weight: 800;
+}
+
+.react-tabs__tab--selected {
+    background: #00c5ff;
+    border-color: #00c5ff;
+    color: white;
+}
+
+.react-tabs__tab--disabled {
+    color: GrayText;
+    cursor: default;
+}
+
+.react-tabs__tab:focus {
+    outline: none;
+}
+
+.react-tabs__tab:focus:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    left: -4px;
+    right: -4px;
+    bottom: -5px;
+    background: #fff;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+    padding-block: 50px;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
 }

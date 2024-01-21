@@ -22,14 +22,13 @@ export const Products = () => {
 
     const handleSlider = (e) => {
         const value = e.target.value;
-
         setSliderInput(value);
     }
 
     return (
         <>
             <main className='bg-colorBg'>
-                <section className='container mx-auto '>
+                <section className='container mx-auto'>
                     <div className="grid grid-cols-4 ">
                         <div className='flex flex-col gap-4 mr-10 py-40'>
                             <div className='bg-white px-2 py-4'>
@@ -51,7 +50,7 @@ export const Products = () => {
                         <div className="col-span-3 self-start">
                             <div className='grid grid-cols-3 gap-x-6 py-8'>
                                 <div className='col-span-3 mb-5'>
-                                    <img src={Arrow} alt='Arrow' className='block mx-auto w-6 h-6 mb-3' />
+                                    <img src={Arrow} alt='Arrow' className='block mx-auto w-6 h-6 mb-3' loading=" lazy" />
                                     <h2 className='text-darkBlue text-3xl font-extrabold text-center'>Recent Products</h2>
                                     <p className='text-darkBlue text-xl font-medium text-center'>Premium Product Value</p>
                                 </div>
@@ -72,12 +71,16 @@ export const Products = () => {
                             </div >
                             <div className="col-span-3 self-start">
                                 <div className='grid grid-cols-3 gap-x-6 py-8'>
-                                    <div className='col-span-3 mb-5'>
-                                        <img src={Arrow} alt='Arrow' className='block mx-auto w-6 h-6 mb-3' />
+                                    <div className='col-span-3 mb-10'>
+                                        <img src={Arrow} alt='Arrow' className='block mx-auto w-6 h-6 mb-3' loading=" lazy" />
                                         <h2 className='text-darkBlue text-3xl font-extrabold text-center'>Or Get A Super Bundle Offer</h2>
                                         <p className='text-darkBlue text-xl font-medium text-center'>Offer valid only while stocks last!</p>
                                     </div>
-                                    {loading ? <ProductsLoader /> : (products?.filter(product => product.attributes.category === "Bundle").map(product => { return (<Card key={product.id} id={product.id} title={product.attributes.title} image={baseUrl + product.attributes.imgmain?.data?.attributes?.url} price={product.attributes.price} salePrice={product.attributes.salePrice} />) }))}
+                                    {loading
+                                        ?
+                                        <ProductsLoader />
+                                        :
+                                        (products?.filter(product => product?.attributes?.category === "Bundle").map(product => { return (<Card key={product.id} id={product.id} title={product?.attributes?.title} image={baseUrl + product?.attributes?.imgmain?.data[0].attributes?.url} price={product?.attributes?.price} salePrice={product?.attributes?.salePrice} salePriceTag={product?.attributes?.salePrice} />) }))}
                                 </div>
                             </div>
                         </div>

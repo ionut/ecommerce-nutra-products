@@ -22,7 +22,7 @@ export const Navbar = () => {
             <nav className='container mx-auto py-5'>
                 <div className='flex flex-row justify-between items-center'>
                     <div className='flex flex-row items-center md:gap-4 xl:gap-8'>
-                        <img src={logo} alt='Thunder of zeus' />
+                        <img src={logo} alt='Thunder of zeus' loading=" lazy" />
                         <NavLink to="/" className={conditionalNavLink}><span className="text-xl font-medium">Home</span></NavLink>
                         <NavLink to="/products" className={conditionalNavLink}><span className="text-xl font-medium">Shop</span></NavLink>
                         <div onClick={handleClick} className="relative cursor-pointer z-20 text-xl font-medium">
