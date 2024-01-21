@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.MuiLinearProgress-bar {
+    background-color: #00c5ff !important;
+}
+
+.MuiSlider-colorPrimary {
+    color: #ff7200 !important;
+}
