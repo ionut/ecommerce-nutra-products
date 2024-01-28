@@ -16,13 +16,16 @@ export default {
       }
     },
     colors: {
+      'brightSkyBlue': '#00c5ff',
+      'dark': '#27353E',
       'white': '#fff',
-      'blue': '#00C5FF',
-      'darkBlue': '#27353E',
-      'gray': '#7A7A7A',
-      'orange': '#FF7200',
-      'dark': '#858585',
-      'colorBg': '#F3F3F3',
+      'orangeYellow': '#ffb100',
+      'pumpkinOrange': '#ff7200',
+      'darkWhite': '#f3f3f3',
+      'gray': '#c6c6c6',
+      'steel': '#7e868b',
+      'coolBlue': '#428fcd',
+      'aquaMarine': '#34ddb3',
       'transparent': 'transparent'
     },
   },

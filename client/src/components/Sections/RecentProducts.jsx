@@ -8,7 +8,7 @@ export const RecentProducts = ({ selectedProducts, sorted, text, sliderInput }) 
 
     return (
         <>
-            {loading ? <ProductsLoader /> : (products?.length == 0) ? 'No product found, check again later' : products?.map((product) => {
+            {(products?.length == 0) ? 'No product found, check again later' : products?.map((product) => {
                 const { title, imgmain, price, salePrice } = product?.attributes;
                 const { id } = product;
                 return (<Card key={id} id={id} title={title} image={baseUrl + imgmain?.data[0].attributes?.url} price={price} salePrice={salePrice} />)

@@ -5,6 +5,7 @@ import { ProductsLoader } from '../../components/Utilities/ProductsLoader'
 import { RecentProducts } from '../../components/Sections/RecentProducts'
 import InputSlider from '../../components/Utilities/InputSlider'
 import { Card } from '../../components/Card/Card'
+import { BundleProduct } from '../../components/Sections/BundleProduct'
 
 export const Products = () => {
     const { products, loading, baseUrl } = useFetch("products?populate=*");
@@ -27,12 +28,12 @@ export const Products = () => {
 
     return (
         <>
-            <main className='bg-colorBg'>
+            <main className='bg-darkWhite'>
                 <section className='container mx-auto'>
                     <div className="grid grid-cols-4 ">
                         <div className='flex flex-col gap-4 mr-10 py-40'>
                             <div className='bg-white px-2 py-4'>
-                                <input type="text" className='bg-colorBg  placeholder:p-2' placeholder='Search Product' onChange={e => setText(e.target.value)} />
+                                <input type="text" className='bg-darkWhite  placeholder:p-2' placeholder='Search Product' onChange={e => setText(e.target.value)} />
                             </div>
                             <div className='bg-white pl-2 py-4'>
                                 <h3 className='text-darkBlue font-semibold text-lg'>Product Category</h3>
@@ -60,7 +61,7 @@ export const Products = () => {
                                         <div className='flex gap-2'>
                                             <label>Sort by price:</label>
                                             <select className='pl-4 bg-transparent' onChange={e => setSorted(e.target.value)}>
-                                                <option default value="">Sort...</option>
+                                                <option default value="" disabled>Sort...</option>
                                                 <option value="desc">High to low</option>
                                                 <option value="asc">Low to high</option>
                                             </select>
@@ -76,11 +77,7 @@ export const Products = () => {
                                         <h2 className='text-darkBlue text-3xl font-extrabold text-center'>Or Get A Super Bundle Offer</h2>
                                         <p className='text-darkBlue text-xl font-medium text-center'>Offer valid only while stocks last!</p>
                                     </div>
-                                    {loading
-                                        ?
-                                        <ProductsLoader />
-                                        :
-                                        (products?.filter(product => product?.attributes?.category === "Bundle").map(product => { return (<Card key={product.id} id={product.id} title={product?.attributes?.title} image={baseUrl + product?.attributes?.imgmain?.data[0].attributes?.url} price={product?.attributes?.price} salePrice={product?.attributes?.salePrice} salePriceTag={product?.attributes?.salePrice} />) }))}
+                                    <BundleProduct products={products} loading={loading} baseUrl={baseUrl} />
                                 </div>
                             </div>
                         </div>

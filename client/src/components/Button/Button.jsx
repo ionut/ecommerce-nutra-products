@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const Button = ({ type, text, backgroundColor, hoverColor, boxShadow, extraStyle, width }) => {
+export const Button = ({ type, children, backgroundColor, hoverColor, boxShadow, extraStyle, width, addToCart }) => {
     return (
-        <button type={type} className={`text-white font-extrabold text-xl py-[10px] px-[30px] ${width} ${hoverColor} ${backgroundColor} ${boxShadow} ${extraStyle}`}>{text}</button>
+        <button type={type} className={`text-white font-extrabold text-xl py-[10px] px-[30px] ${extraStyle}`} onClick={addToCart}>{children}</button>
     )
 }

@@ -13,10 +13,10 @@ import { Button } from '../Button/Button';
 
 export const Footer = () => {
     const conditionalNavLink = ({ isActive, isPending }) =>
-        isPending ? "text-white" : isActive ? "text-blue" : "text-white"
+        isPending ? "text-white" : isActive ? "text-brightSkyBlue" : "text-white"
 
     return (
-        <footer className='bg-darkBlue'>
+        <footer className='bg-dark'>
             <div className='container mx-auto py-10'>
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-row justify-between items-center">
@@ -33,7 +33,7 @@ export const Footer = () => {
                     </div>
                     <hr className='text-white h-1' />
                     <img src={cloud} alt="Cloud" className='block mx-auto' />
-                    <div className='flex gap-10 bg-blue px-36 py-14'>
+                    <div className='flex gap-10 bg-brightSkyBlue px-36 py-14'>
                         <div className='md:w-1/3'>
                             <h1 className='text-white text-xl font-bold'>Want To Get The Latest Offers & News From Thunder Of Zeus Straight To Your Inbox ?</h1>
                             <p className='text-white italic text-base'>(We won’t spam you. Our emails are informative & include The Latest offers).</p>
@@ -41,7 +41,7 @@ export const Footer = () => {
                         <form className='grid grid-cols-2 content-center md:gap-5 xl:gap-10 md:w-2/3'>
                             <input type="text" className='h-12 placeholder:px-2 placeholder:text-dark font-medium' placeholder='* Add Your Name Here' />
                             <input type="email" className='h-12 placeholder:px-2 placeholder:text-dark font-medium' placeholder='* Add Email' />
-                            <Button type={"submit"} text={'Send me info'} backgroundColor={'bg-darkBlue'} extraStyle={'col-start-2'} hoverColor={'hover:text-white'} />
+                            <Button extraStyle={'bg-darkBluecol-start-2 hover:text-white'} type={"submit"} >Send me info</Button>
 
                         </form>
                     </div>

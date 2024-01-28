@@ -74,8 +74,8 @@ function Item({ item }) {
                     <div className="flex flex-col justify-center gap-10">
                         <h2 className='text-white text-6xl font-extrabold'>{item.header}</h2>
                         <p className='text-white text-xl'>{item.paragraph}</p>
-                        <Button type={'button'} text={'Shop now'} backgroundColor={'bg-orange'} hoverColor={'hover:text-darkBlue'} width={'w-1/2'} />
-                        <p className='text-blue text-lg font-semibold'>FREE DELIVERY OVER 50€</p>
+                        <Button type={'button'} extraStyle={'bg-pumpkinOrange hover:text-darkBlue w-1/2'} >Shop now</Button>
+                        <p className='text-brightSkyBlue text-lg font-semibold'>FREE DELIVERY OVER 50€</p>
                     </div>
                 </div>
             </section>

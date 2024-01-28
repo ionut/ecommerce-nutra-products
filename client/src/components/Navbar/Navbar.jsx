@@ -6,12 +6,17 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useFetch } from '../../hooks/useFetch';
+import { Cart } from '../Cart/Cart';
+import { useSelector } from 'react-redux';
 
 export const Navbar = () => {
-    const { products, loading } = useFetch(`products?populate=*`)
+    const { products, loading, baseUrl } = useFetch(`products?populate=*`)
     const [open, setOpen] = useState(false)
+    const [openCart, setOpenCart] = useState(false)
+    const cartProducts = useSelector(state => state.cart.products)
+
     const conditionalNavLink = ({ isActive, isPending }) =>
-        isPending ? "text-darkBlue" : isActive ? "text-blue" : "hover:text-blue";
+        isPending ? "text-darkBlue" : isActive ? "text-brightSkyBlue" : "hover:text-brightSkyBlue";
 
     const handleClick = () => {
         setOpen(!open)
@@ -40,10 +45,13 @@ export const Navbar = () => {
                         </div>
                     </div>
                     <div className='flex flex-row items-center md:gap-4 xl:gap-8'>
-                        <Button type={'button'} text={'Get 15% Discount'} backgroundColor={'bg-orange'} boxShadow={'shadow-buttonShadow'} hoverColor={'hover:text-darkBlue'} />
+                        <Button type={'button'} extraStyle={'bg-pumpkinOrange shadow-buttonShadow hover:text-darkBlue'} >Get 15% Discount</Button>
                         <SearchIcon fontSize="large" />
                         <NavLink to="/asda" className={conditionalNavLink}><span className="text-xl font-medium">My account</span></NavLink>
-                        <a className='text-xl font-medium relative'>Cart: <ShoppingCartOutlinedIcon fontSize="large" /><span className="absolute -right-3 -top-3 bg-orange text-white w-6 h-6 rounded-[50%] flex justify-center items-center">0</span></a>
+                        <div className='text-xl font-medium relative cursor-pointer' onClick={() => setOpenCart(!openCart)}>Cart: <ShoppingCartOutlinedIcon fontSize="large" />
+                            <span className="absolute -right-3 -top-3 bg-pumpkinOrange text-white w-6 h-6 rounded-[50%] flex justify-center items-center">{cartProducts.length}</span>
+                        </div>
+                        <Cart openCart={openCart} baseUrl={baseUrl} />
                     </div>
                 </div>
             </nav>

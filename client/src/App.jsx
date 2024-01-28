@@ -15,6 +15,7 @@ import { ContacUs } from "./pages/ContactUs/ContacUs";
 import { Terms } from "./pages/Terms/Terms";
 import { Privacy } from "./pages/Privacy/Privacy";
 import { Disclaimer } from "./pages/Disclaimer/Disclaimer";
+import { ViewCart } from "./pages/ViewCart/ViewCart";
 import '../src/assets/css/index.css'
 import { useState } from "react";
 import { Loading } from "./components/Utilities/Loading";
@@ -80,6 +81,10 @@ const router = createBrowserRouter([{
   }, {
     path: "/disclaimer",
     element: <Disclaimer />
+  },
+  {
+    path: "/cart",
+    element: <ViewCart />
   }]
 },])
 
