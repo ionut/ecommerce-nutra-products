@@ -5,11 +5,11 @@ import { useFetch } from '../../hooks/useFetch';
 
 export const ViewCart = () => {
     const { baseUrl } = useFetch("products?populate=*");
-    const products = useSelector(state => state.cart.products)
+    const products = useSelector(state => state.cart.products);
     const dispatch = useDispatch()
 
     const handleAddToCart = (e) => {
-        console.log(e.target.value)
+        ProductTotal(e.target.value);
     }
 
     const subTotal = () => {
@@ -18,12 +18,10 @@ export const ViewCart = () => {
         return total.toFixed(2);
     }
 
-    const ProductTotal = () => {
+    const ProductTotal = (quantity) => {
         let total = 0;
-        products.forEach(product => console.log(product))
+        products.forEach(product => product.price + quantity)
     }
-
-    ProductTotal()
 
     const totalTransport = () => {
         let total = Number(subTotal())
@@ -41,7 +39,7 @@ export const ViewCart = () => {
     return (
         <>
             <main className='bg-darkWhite'>
-                <section className='container mx-auto py-20'>
+                <section className='container mx-auto py-20 min-h-[70vh]'>
                     <div className="grid grid-cols-3 gap-5">
                         <div className='col-span-2'>
                             <h4 className="text-dark text-xl font-bold">My Cart</h4>
